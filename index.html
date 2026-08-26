@@ -617,6 +617,74 @@ nav{
 
   background:rgba(255,255,255,.08);
 }
+   @media(prefers-reduced-motion:reduce){
+  .background .grid,
+  .hero::before,
+  .profile-inner::after,
+  .skill-fill::after{
+    animation:none!important;
+  }
+}
+
+
+/* ===== SIMPLE PROFILE PHOTO ===== */
+
+.profile-card {
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  transform: none !important;
+}
+
+.profile-card::before {
+  display: none !important;
+}
+
+.profile-inner {
+  min-height: 0 !important;
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.profile-inner::after {
+  display: none !important;
+}
+
+.profile-icon {
+  width: 150px !important;
+  height: 150px !important;
+  min-width: 150px !important;
+  min-height: 150px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  border: 3px solid rgba(56,189,248,.5) !important;
+  box-shadow: 0 12px 35px rgba(0,0,0,.3) !important;
+  animation: none !important;
+}
+
+.profile-icon img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+</style>
 
 
 /* =========================================================
