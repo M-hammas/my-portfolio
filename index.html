@@ -2517,6 +2517,107 @@ body.loaded .hero-content>*{animation-play-state:running;}
   }
 }
 
+
+/* =========================================================
+   FINAL HERO ORBIT FIX — PORTRAIT FIXED / LABELS UPRIGHT
+   ========================================================= */
+.profile-orbit-scene{
+  overflow:visible;
+}
+
+.profile-core{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:210px;
+  z-index:30;
+  pointer-events:none;
+}
+
+.profile-photo-ring{
+  position:relative;
+  width:178px;
+  height:178px;
+  margin:0 auto;
+  padding:6px;
+  border-radius:50%;
+  background:conic-gradient(from 0deg,#38bdf8,#6366f1,#c084fc,#38bdf8);
+  animation:none !important;
+  transform:none !important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.10),
+             0 0 38px rgba(56,189,248,.28),
+             0 0 100px rgba(99,102,241,.14);
+}
+
+.profile-photo-ring::before{
+  animation:photoHalo 3.2s ease-in-out infinite !important;
+  transform-origin:center;
+}
+
+.profile-photo{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  overflow:hidden;
+  border:5px solid #050816;
+  background:#071126;
+  transform:none !important;
+}
+
+.profile-photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center center;
+  transform:none !important;
+  animation:none !important;
+  border-radius:50%;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+
+/* The orbit rotates, but every skill label counter-rotates so its
+   icon and spelling remain perfectly upright and readable. */
+.skill-orbit{
+  z-index:12;
+}
+.orbit-skill{
+  transform:rotate(var(--angle)) translateY(-150px) rotate(calc(var(--angle) * -1));
+  will-change:transform;
+}
+.orbit-two .orbit-skill{
+  transform:rotate(var(--angle)) translateY(-202px) rotate(calc(var(--angle) * -1));
+}
+.orbit-three .orbit-skill{
+  transform:rotate(var(--angle)) translateY(-252px) rotate(calc(var(--angle) * -1));
+}
+
+/* Keep the portrait visually in front while skills pass around it. */
+.profile-core-info{
+  pointer-events:none;
+}
+
+@media(max-width:600px){
+  .profile-core{
+    width:180px;
+  }
+  .profile-photo-ring{
+    width:150px;
+    height:150px;
+  }
+  .orbit-one .orbit-skill{
+    transform:rotate(var(--angle)) translateY(-125px) rotate(calc(var(--angle) * -1));
+  }
+  .orbit-two .orbit-skill{
+    transform:rotate(var(--angle)) translateY(-165px) rotate(calc(var(--angle) * -1));
+  }
+  .orbit-three .orbit-skill{
+    transform:rotate(var(--angle)) translateY(-207px) rotate(calc(var(--angle) * -1));
+  }
+}
+
 </style>
 </head>
 
@@ -2796,7 +2897,7 @@ body.loaded .hero-content>*{animation-play-state:running;}
           <div class="profile-core">
             <div class="profile-photo-ring">
               <div class="profile-photo">
-                <img src="profile.png" alt="M Hammas Profile Photo">
+                <img src="profile.jpg" alt="M Hammas Profile Photo">
               </div>
             </div>
 
