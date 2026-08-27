@@ -2055,64 +2055,31 @@ body.loaded .hero-content>*{animation-play-state:running;}
 @media(prefers-reduced-motion:reduce){
   .background .grid,.hero::before,.profile-inner::after,.skill-fill::after{animation:none!important;}
 }
-/* ===== FACE ONLY PROFILE PHOTO ===== */
+/* ===== PROFESSIONAL PROFILE PHOTO ===== */
 
 .profile-card {
-  width: auto !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  transform: none !important;
+  width: 180px;
+  height: 180px;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
-.profile-card::before {
-  display: none !important;
-}
+.profile-card img {
+  width: 100%;
+  height: 100%;
 
-.profile-card:hover {
-  transform: none !important;
-}
+  /* Fill the circle without stretching */
+  object-fit: cover;
 
-.profile-inner {
-  min-height: 0 !important;
-  width: auto !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  overflow: visible !important;
-}
+  /* Move the photo upward so the face is centered */
+  object-position: center 38%;
 
-.profile-inner::after {
-  display: none !important;
-}
+  display: block;
 
-.profile-icon {
-  width: 190px !important;
-  height: 190px !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: flex-start !important;
-  justify-content: center !important;
-  background: transparent !important;
+  border-radius: 50%;
 }
-
-.profile-icon img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-  display: block !important;
-  border-radius: 50% !important;
-}
-
 </style>
 </head>
 
