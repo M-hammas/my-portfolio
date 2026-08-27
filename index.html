@@ -2311,7 +2311,8 @@ body.loaded .hero-content>*{animation-play-state:running;}
     0 0 0 1px rgba(255,255,255,.08),
     0 0 35px rgba(56,189,248,.25),
     0 0 90px rgba(99,102,241,.12);
-  animation:photoRingSpin 8s linear infinite;
+  /* The ring may animate, but the photo itself stays fixed. */
+  animation:none;
 }
 
 .profile-photo-ring::before{
@@ -2795,7 +2796,7 @@ body.loaded .hero-content>*{animation-play-state:running;}
           <div class="profile-core">
             <div class="profile-photo-ring">
               <div class="profile-photo">
-                <img src="profile.jpg" alt="M Hammas Profile Photo">
+                <img src="profile.png" alt="M Hammas Profile Photo">
               </div>
             </div>
 
