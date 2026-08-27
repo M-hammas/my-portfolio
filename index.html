@@ -2055,7 +2055,7 @@ body.loaded .hero-content>*{animation-play-state:running;}
 @media(prefers-reduced-motion:reduce){
   .background .grid,.hero::before,.profile-inner::after,.skill-fill::after{animation:none!important;}
 }
-   /* ===== SIMPLE PROFILE PHOTO ===== */
+/* ===== FACE ONLY PROFILE PHOTO ===== */
 
 .profile-card {
   width: auto !important;
@@ -2092,9 +2092,10 @@ body.loaded .hero-content>*{animation-play-state:running;}
 .profile-inner::after {
   display: none !important;
 }
+
 .profile-icon {
-  width: 150px !important;
-  height: 150px !important;
+  width: 190px !important;
+  height: 190px !important;
   border-radius: 50% !important;
   overflow: hidden !important;
   display: flex !important;
@@ -2107,8 +2108,9 @@ body.loaded .hero-content>*{animation-play-state:running;}
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  object-position: top center !important;
+  object-position: center top !important;
   display: block !important;
+  border-radius: 50% !important;
 }
 
 </style>
