@@ -2269,13 +2269,47 @@ body.loaded .hero-content>*{animation-play-state:running;}
   z-index:20;
 }
 
-.orbit-skill i{
+/* Keep each skill label and icon upright while its bubble travels around the orbit. */
+.orbit-skill-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  transform:rotate(0deg);
+}
+
+.orbit-one .orbit-skill-content{
+  animation:keepUprightA 16s linear infinite reverse;
+}
+
+.orbit-two .orbit-skill-content{
+  animation:keepUprightB 22s linear infinite;
+}
+
+.orbit-three .orbit-skill-content{
+  animation:keepUprightC 28s linear infinite reverse;
+}
+
+@keyframes keepUprightA{
+  to{transform:rotate(360deg)}
+}
+@keyframes keepUprightB{
+  to{transform:rotate(360deg)}
+}
+@keyframes keepUprightC{
+  to{transform:rotate(360deg)}
+}
+
+.orbit-skill i,
+.orbit-skill-content i{
   font-size:21px;
   color:#38bdf8;
   filter:drop-shadow(0 0 8px rgba(56,189,248,.5));
 }
 
-.orbit-skill b{
+.orbit-skill b,
+.orbit-skill-content b{
   font-size:9px;
   line-height:1;
   font-weight:800;
@@ -2863,34 +2897,34 @@ body.loaded .hero-content>*{animation-play-state:running;}
 
           <div class="skill-orbit orbit-one">
             <span class="orbit-skill skill-html">
-              <i class="fa-brands fa-html5"></i><b>HTML</b>
+              <span class="orbit-skill-content"><i class="fa-brands fa-html5"></i><b>HTML</b></span>
             </span>
             <span class="orbit-skill skill-css">
-              <i class="fa-brands fa-css3-alt"></i><b>CSS</b>
+              <span class="orbit-skill-content"><i class="fa-brands fa-css3-alt"></i><b>CSS</b></span>
             </span>
           </div>
 
           <div class="skill-orbit orbit-two">
             <span class="orbit-skill skill-js">
-              <i class="fa-brands fa-js"></i><b>JavaScript</b>
+              <span class="orbit-skill-content"><i class="fa-brands fa-js"></i><b>JavaScript</b></span>
             </span>
             <span class="orbit-skill skill-react">
-              <i class="fa-brands fa-react"></i><b>React</b>
+              <span class="orbit-skill-content"><i class="fa-brands fa-react"></i><b>React</b></span>
             </span>
             <span class="orbit-skill skill-firebase">
-              <i class="fa-solid fa-fire"></i><b>Firebase</b>
+              <span class="orbit-skill-content"><i class="fa-solid fa-fire"></i><b>Firebase</b></span>
             </span>
           </div>
 
           <div class="skill-orbit orbit-three">
             <span class="orbit-skill skill-ui">
-              <i class="fa-solid fa-pen-ruler"></i><b>UI/UX</b>
+              <span class="orbit-skill-content"><i class="fa-solid fa-pen-ruler"></i><b>UI/UX</b></span>
             </span>
             <span class="orbit-skill skill-git">
-              <i class="fa-brands fa-github"></i><b>GitHub</b>
+              <span class="orbit-skill-content"><i class="fa-brands fa-github"></i><b>GitHub</b></span>
             </span>
             <span class="orbit-skill skill-api">
-              <i class="fa-solid fa-code"></i><b>API</b>
+              <span class="orbit-skill-content"><i class="fa-solid fa-code"></i><b>API</b></span>
             </span>
           </div>
 
